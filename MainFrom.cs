@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using 子端.Help;
@@ -21,6 +22,25 @@ namespace 子端
             p.BeginErrorReadLine();
             p.ErrorDataReceived += p_ErrorDataReceived;
             p.OutputDataReceived += p_OutputDataReceived;
+
+            //开机自启
+            
+            kjzq();
+        }
+
+        private async void kjzq() {
+            var SelfStarting = await appSettings.GetSettings("SelfStarting");
+            if (SelfStarting == "false") {
+                string execPath = Application.ExecutablePath;
+                RegistryKey rk = Registry.LocalMachine;
+                RegistryKey rk2 = rk.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+                rk2.SetValue("MyExec", execPath);
+                await appSettings.SetSettings("SelfStarting", "true");
+                rk2.Dispose();
+                rk.Dispose();
+            }
+            //string.Format("[注册表操作]添加注册表键值：path = {0}, key = {1}, value = {2} 成功", rk2.Name, "TuniuAutoboot", execPath));
+
         }
 
         private async void StartApi() {

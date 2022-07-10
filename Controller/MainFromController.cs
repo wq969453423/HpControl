@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using 子端.Help;
@@ -27,17 +28,22 @@ namespace 子端.Controller
 
 
 
+
+        #region 其他机器操作
+
         /// <summary>
         /// 获取机器当前信息
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<object>  GetWhole(InPutInformationDto model)
+        public async Task<object> GetWhole(InPutInformationDto model)
         {
-            OutPutAllDto resDto=new OutPutAllDto();
-            foreach (var item in model.type) {
-                switch (item) {
+            OutPutAllDto resDto = new OutPutAllDto();
+            foreach (var item in model.type)
+            {
+                switch (item)
+                {
                     case (int)InformationTypeEnum.所有:
                         resDto.YamlText = await ReadYamlText(model.path);
                         resDto.CpuTemperature = await ReadCpuTemperature();
@@ -49,20 +55,44 @@ namespace 子端.Controller
                     case (int)InformationTypeEnum.温度:
                         resDto.CpuTemperature = await ReadCpuTemperature();
                         break;
-                    case (int)InformationTypeEnum.配置文件:
+                    case (int)InformationTypeEnum.读取配置文件:
                         resDto.YamlText = await ReadYamlText(model.path);
                         break;
                 }
-                if (item==(int)InformationTypeEnum.所有)
+                if (item == (int)InformationTypeEnum.所有)
                 {
                     break;
-                }   
+                }
             }
-            return Task.FromResult(new { data= resDto,code=200,msg="成功" });
+            return Task.FromResult(new { data = resDto, code = 200, msg = "成功" });
         }
 
 
-        #region 其他机器配置
+        [HttpPost]
+        public async Task<object> SetWhole(InPutInformationDto model)
+        {
+
+            foreach (var item in model.type)
+            {
+                switch (item)
+                {
+                    case (int)InformationTypeEnum.运行bat:
+                        await WriteStartBat(model.path);
+                        break;
+                    case (int)InformationTypeEnum.启动:
+                        await WriteStartMiner(model.path);
+                        break;
+                    case (int)InformationTypeEnum.停止:
+                        await WriteEndMiner();
+                        break;
+                    case (int)InformationTypeEnum.设置配置文件:
+                        await WriteYamlText(model.yaml);
+                        break;
+                }
+            }
+            return Task.FromResult(new { code = 200, msg = "成功" });
+        }
+
 
         /// <summary>
         /// 获取其他机器配置
@@ -72,7 +102,7 @@ namespace 子端.Controller
         [HttpPost]
         public async Task<object> GetOtherWhole(List<InPutInformationDto> list)
         {
-            List<OutPutAllDto> resListData=new List< OutPutAllDto >();
+            List<OutPutAllDto> resListData=new List<OutPutAllDto>();
             foreach (var item in list)
             {
                 var url = "http://" + item.ip + ":8081/api/MainFrom/GetWhole";
@@ -89,6 +119,36 @@ namespace 子端.Controller
                 string result = await httpResponse.Content.ReadAsStringAsync();
                 var ResultData = JsonConvert.DeserializeObject<OutPutAllDto>(result);
                 resListData.Add(ResultData);
+            }
+
+            return await Task.FromResult(new { data = resListData, code = 200, msg = "成功" });
+        }
+
+        /// <summary>
+        /// 设置其他机器配置
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<object> SetOtherWhole(List<InPutInformationDto> list)
+        {
+            List<string> resListData = new List<string>();
+            foreach (var item in list)
+            {
+                var url = "http://" + item.ip + ":8081/api/MainFrom/SetWhole";
+                //新建hppt请求
+                var client = new HttpClient();
+                var parms = JsonConvert.SerializeObject(item);
+                HttpContent content = null;
+                if (parms != null)
+                {
+                    content = new StringContent(parms);
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                }
+                var httpResponse = await client.PostAsync(url, content);
+                string result = await httpResponse.Content.ReadAsStringAsync();
+                var ResultData = JsonConvert.DeserializeObject<HttpResponseMessage>(result);
+                resListData.Add(ResultData.StatusCode.ToString());
             }
 
             return await Task.FromResult(new { data = resListData, code = 200, msg = "成功" });
@@ -175,25 +235,27 @@ namespace 子端.Controller
         {
             //先停止
             await WriteEndMiner();
+            Thread.Sleep(150);
             p.StandardInput.WriteLine(path+ "hpool-miner-ar-console.exe");
             //运行miner
             return await Task.FromResult(new { code = 200, msg = "成功" }); ;
-
         }
 
         [HttpGet]
         public async Task<object> WriteEndMiner()
         {
-            using (var process = CMDHelps.ExeCommand())
-            {
-                process.Start();
-                process.OutputDataReceived += p_OutputDataReceived;
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
-                process.Close();
-            }
-            return await Task.FromResult(new { code = 200, msg = "成功" });
+            return await Task.Run(() => {
+                using (var process = CMDHelps.ExeCommand())
+                {
+                    process.Start();
+                    process.OutputDataReceived += p_OutputDataReceived;
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+                    process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
+                    process.Close();
+                }
+                return new { code = 200, msg = "成功" };
+            });
         }
 
         private void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
@@ -201,7 +263,11 @@ namespace 子端.Controller
             MainFrom.mainfromInstance.SetText("\r\n" + e.Data);
         }
 
-
+        /// <summary>
+        /// 运行bat
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<object> WriteStartBat(string path)
         {

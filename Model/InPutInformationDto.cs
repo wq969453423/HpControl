@@ -13,5 +13,7 @@ namespace 子端.Model
 
         public string path { get; set; }
         public string ip { get; set; }
+
+        public InPutYamlTextDto yaml { get; set; }
     }
 }

@@ -114,10 +114,10 @@ namespace 子端.Help
                 .Replace("# 下面配置改为", "")
                 .Replace("# 绑定CPU开始序号", "")
                 .Replace("# E.g http://127.0.0.1:8888 socket5://127.0.0.1:8888", "")
-                .Replace("# socket5 or http proxy", "")
-                .Replace(" ", "");
+                .Replace("# socket5 or http proxy", "");
             }
-            
+            input.Replace(" ", "");
+
 
             var pathIndex = input.IndexOf("path:");
             var minerNameIndex = input.IndexOf("minerName:");

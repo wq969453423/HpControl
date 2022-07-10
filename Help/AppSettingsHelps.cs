@@ -77,7 +77,7 @@ namespace 子端.Help
 
             InPutYamlTextDto resModel = new InPutYamlTextDto();
             resModel.path = input.Substring(pathIndex, minerNameIndex).Split('-').ToList();
-
+            return default;
 
         }
 

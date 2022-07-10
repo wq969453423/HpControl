@@ -1,5 +1,7 @@
 ﻿
 using System.Diagnostics;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using 子端.Help;
@@ -18,10 +20,8 @@ namespace 子端.Controller
         public static string ReadTextNow;
 
 
-
         
 
-        
 
         //获取所有
         [HttpPost]
@@ -34,6 +34,22 @@ namespace 子端.Controller
             return Task.FromResult(new { data= resDto,code=200,msg="成功" });
         }
 
+
+        #region 其他机器配置
+
+        //配置其他机器
+        [HttpPost]
+        public async Task<object> SetOtherSetting()
+        {
+
+            var url = "";
+            //新建hppt请求
+            var client = new HttpClient();
+            var req = WebRequest.CreateHttp(url);
+            return default;
+        }
+
+        #endregion
 
         #region 温度 && 算力
 

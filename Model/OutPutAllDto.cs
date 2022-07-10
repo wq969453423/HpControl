@@ -12,7 +12,7 @@ namespace 子端.Model
         public InPutYamlTextDto YamlText { get; set; }
 
         //cpu温度
-        public string CpuTemperature { get; set; }
+        public List<string> CpuTemperature { get; set; }
 
         //当前算力
         public string CalculatingPower { get; set; }

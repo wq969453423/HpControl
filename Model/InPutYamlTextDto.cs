@@ -22,5 +22,7 @@ namespace 子端.Model
         public string flag { get; set; }
 
         public string threadNum { get; set; }
+
+        public string filepath { get; set; }
     }
 }

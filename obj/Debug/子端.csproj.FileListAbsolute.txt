@@ -42,19 +42,6 @@ E:\群控\客户端\obj\Debug\子端.pdb
 E:\群控\客户端\bin\Debug\子端.exe.config
 E:\群控\客户端\bin\Debug\子端.exe
 E:\群控\客户端\bin\Debug\子端.pdb
-E:\群控\客户端\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
-E:\群控\客户端\bin\Debug\Microsoft.Extensions.Primitives.dll
-E:\群控\客户端\bin\Debug\Newtonsoft.Json.dll
-E:\群控\客户端\bin\Debug\SunnyUI.Common.dll
-E:\群控\客户端\bin\Debug\SunnyUI.dll
-E:\群控\客户端\bin\Debug\System.Buffers.dll
-E:\群控\客户端\bin\Debug\System.Memory.dll
-E:\群控\客户端\bin\Debug\System.Net.Http.Formatting.dll
-E:\群控\客户端\bin\Debug\System.Numerics.Vectors.dll
-E:\群控\客户端\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\群控\客户端\bin\Debug\System.ValueTuple.dll
-E:\群控\客户端\bin\Debug\System.Web.Http.dll
-E:\群控\客户端\bin\Debug\System.Web.Http.SelfHost.dll
 E:\群控\客户端\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 E:\群控\客户端\bin\Debug\Microsoft.Extensions.Primitives.xml
 E:\群控\客户端\bin\Debug\Newtonsoft.Json.xml
@@ -68,3 +55,7 @@ E:\群控\客户端\bin\Debug\System.ValueTuple.xml
 E:\群控\客户端\bin\Debug\System.Web.Http.xml
 E:\群控\客户端\bin\Debug\System.Web.Http.SelfHost.xml
 E:\群控\客户端\obj\Debug\子端.csproj.CopyComplete
+E:\群控\客户端\bin\Debug\Aga.Controls.dll
+E:\群控\客户端\bin\Debug\OpenHardwareMonitorLib.dll
+E:\群控\客户端\bin\Debug\OxyPlot.dll
+E:\群控\客户端\bin\Debug\OxyPlot.WindowsForms.dll

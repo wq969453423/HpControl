@@ -15,10 +15,8 @@ namespace 子端
             InitializeComponent();
             StartApi();
             appSettings = new AppSettingsHelps();
-            string cmdStr = "";
-            p = CMDHelps.ExeCommand(cmdStr);
+            p = CMDHelps.ExeCommand();
             p.Start();
-            p.StandardInput.WriteLine(cmdStr);
             p.BeginOutputReadLine();
             p.BeginErrorReadLine();
             p.ErrorDataReceived += p_ErrorDataReceived;
@@ -39,8 +37,8 @@ namespace 子端
         {
             
         }
-        private delegate void SetTextCallback(string text);
-        private void SetText(string text)
+        public delegate void SetTextCallback(string text);
+        public void SetText(string text)
         {
             // InvokeRequired需要比较调用线程ID和创建线程ID
             // 如果它们不相同则返回true
@@ -54,11 +52,17 @@ namespace 子端
                 this.textBox1.AppendText(text); 
             }
         }
-        public void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        public async void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
             //往配置文件写入
-            appSettings.SetSettings("NowText", e.Data);
-            SetText(e.Data);
+            
+            if (e.Data.Contains("H/s"))
+            {
+                await appSettings.SetSettings("NowText", e.Data);
+                
+            }
+            SetText("\r\n"+e.Data);
+
         }
 
         private void uiButton1_Click(object sender, EventArgs e)

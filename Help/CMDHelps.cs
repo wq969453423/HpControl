@@ -10,21 +10,13 @@ namespace 子端
 {
     public class CMDHelps
     {
-        ///
-        /// 执行cmd.exe命令
-        ///
-        ///命令文本
-        /// 命令输出文本
-        public static Process ExeCommand(string commandText)
-        {
-            return ExeCommand(new string[] { commandText });
-        }
+
         ///
         /// 执行多条cmd.exe命令
         ///
         ///命令文本数组
         /// 命令输出文本
-        public static Process ExeCommand(string[] commandTexts)
+        public static Process ExeCommand()
         {
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";
@@ -32,11 +24,9 @@ namespace 子端
             p.StartInfo.RedirectStandardInput = true;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.CreateNoWindow = false;
-            
+            p.StartInfo.CreateNoWindow = true;
 
             return p;
-
 
                
                 //p.StandardInput.WriteLine("exit");

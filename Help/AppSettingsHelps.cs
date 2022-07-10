@@ -13,55 +13,65 @@ namespace 子端.Help
     {
         //获取Configuration对象
         Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration("子端.exe");
-        public string GetSettings(string key) {
+        
+        
+        public async Task<string> GetSettings(string key) {
             //根据KEY读取值
             string Str = config.AppSettings.Settings[key].Value;
-            return Str;
+            return await Task.FromResult(Str);
         }
 
 
-        public void SetSettings(string key, string SetValue)
+        public async Task SetSettings(string key, string SetValue)
         {
             config.AppSettings.Settings[key].Value = SetValue;
-            SaveSettings();
+            await SaveSettings();
         }
 
-        public void AddSettings(string key,string SetValue)
+        public async Task AddSettings(string key,string SetValue)
         {
             config.AppSettings.Settings.Add(key, SetValue);
-            SaveSettings();
+            await SaveSettings();
         }
 
-        public void DelSettings(string key)
+        public async Task DelSettings(string key)
         {
             config.AppSettings.Settings.Remove(key);
-            SaveSettings();
+            await SaveSettings();
         }
 
-        private void SaveSettings()
+        private async Task SaveSettings()
         {
-            config.Save(ConfigurationSaveMode.Modified);
-            ConfigurationManager.RefreshSection("AppSettings");
+            await Task.Run(() =>
+            {
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("AppSettings");
+            });
+            
         }
 
 
-        public bool WriteFile(string filePath,string content, string fileName= "config.yaml")
+        public async Task<bool> WriteFile(string filePath,string content, string fileName= "config.yaml")
         {
+            await Task.Run(() => {
 
-            FileInfo fi = new FileInfo(filePath+ fileName);
+                FileInfo fi = new FileInfo(filePath + fileName);
 
-            if (fi.Exists) {
-                fi.Delete();
-            }
-            StreamWriter sw = fi.CreateText();
-            sw.WriteLine(content);
-            sw.Flush();
-            sw.Close();
-            sw.Dispose();
+                if (fi.Exists)
+                {
+                    fi.Delete();
+                }
+                StreamWriter sw = fi.CreateText();
+                sw.WriteLine(content);
+                sw.Flush();
+                sw.Close();
+                sw.Dispose();
+            });
+            
             return true;
         }
 
-        public InPutYamlTextDto ReadFile(string filePath, string fileName = "config.yaml")
+        public async Task<InPutYamlTextDto>  ReadFile(string filePath, string fileName = "config.yaml")
         {
 
             StreamReader sr = new StreamReader(filePath + fileName);
@@ -77,6 +87,8 @@ namespace 子端.Help
 
             InPutYamlTextDto resModel = new InPutYamlTextDto();
             resModel.path = input.Substring(pathIndex, minerNameIndex).Split('-').ToList();
+            resModel.minerName = input.Substring(minerNameIndex, apiKeyIndex);
+            resModel.apiKey = input.Substring(apiKeyIndex, apiKeyIndex);
             return default;
 
         }

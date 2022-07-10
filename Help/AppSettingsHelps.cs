@@ -135,6 +135,7 @@ namespace 子端.Help
             resModel.proxy = input.Substring(proxyIndex + 6, proxy2Index - (proxyIndex + 6)).Trim();
             resModel.flag = input.Substring(flagIndex + 5, threadNumIndex - (flagIndex + 5)).Trim();
             resModel.threadNum = input.Substring(threadNumIndex + 10, input.Length - (threadNumIndex + 10)).Trim();
+            await SetSettings("YamlPath", filePath);
             return resModel;
 
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using 子端.Help;
 
@@ -85,14 +86,34 @@ namespace 子端
 
         }
 
-        private void uiButton1_Click(object sender, EventArgs e)
+        private async void uiButton2_Click(object sender, EventArgs e)
         {
+            using (var process = CMDHelps.ExeCommand())
+            {
+                process.Start();
+                process.OutputDataReceived += p_OutputDataReceived;
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
+                process.Close();
+            }
+            Thread.Sleep(150);
+            var path = await appSettings.GetSettings("YamlPath");
+            p.StandardInput.WriteLine(path + "hpool-miner-ar-console.exe");
 
         }
 
-        private void uiButton2_Click(object sender, EventArgs e)
+        private void uiButton1_Click(object sender, EventArgs e)
         {
-
+            using (var process = CMDHelps.ExeCommand())
+            {
+                process.Start();
+                process.OutputDataReceived += p_OutputDataReceived;
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
+                process.Close();
+            };
         }
         
         private void textBox1_TextChanged(object sender, EventArgs e)

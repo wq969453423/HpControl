@@ -1616,3 +1616,161 @@ time="2022-07-11T02:11:52+08:00" level=info msg="enter calc randomx" height=9718
 time="2022-07-11T02:11:52+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
 time="2022-07-11T02:11:52+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
 time="2022-07-11T02:11:53+08:00" level=info msg="new mining info" capacity="0 H/s" height=971848 jobId=1314126
+time="2022-07-11T02:12:21+08:00" level=info msg="enter calc randomx" height=971849 jobId=1923734 thread=0
+time="2022-07-11T02:12:21+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:12:21+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:12:22+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1923734
+time="2022-07-11T02:12:38+08:00" level=info msg="upload status"
+time="2022-07-11T02:12:51+08:00" level=info msg="enter calc randomx" height=971849 jobId=1415910 thread=0
+time="2022-07-11T02:12:51+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:12:51+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:12:52+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1415910
+time="2022-07-11T02:14:29+08:00" level=info msg="enter calc randomx" height=971849 jobId=1263206 thread=0
+time="2022-07-11T02:14:29+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:14:29+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:14:30+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1263206
+time="2022-07-11T02:14:30+08:00" level=info msg="enter calc randomx" height=971849 jobId=1472752 thread=0
+time="2022-07-11T02:14:30+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:14:30+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:14:31+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1472752
+time="2022-07-11T02:14:31+08:00" level=info msg="enter calc randomx" height=971849 jobId=1895070 thread=0
+time="2022-07-11T02:14:31+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:14:31+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:14:32+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1895070
+time="2022-07-11T02:14:50+08:00" level=info msg="enter calc randomx" height=971849 jobId=1825555 thread=0
+time="2022-07-11T02:14:50+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:14:50+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:14:51+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1825555
+time="2022-07-11T02:15:20+08:00" level=info msg="enter calc randomx" height=971849 jobId=1394686 thread=0
+time="2022-07-11T02:15:20+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:15:20+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:15:21+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1394686
+time="2022-07-11T02:15:39+08:00" level=info msg="upload status"
+time="2022-07-11T02:15:50+08:00" level=info msg="enter calc randomx" height=971849 jobId=1762911 thread=0
+time="2022-07-11T02:15:50+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:15:50+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:15:51+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1762911
+time="2022-07-11T02:16:20+08:00" level=info msg="enter calc randomx" height=971849 jobId=1462875 thread=0
+time="2022-07-11T02:16:20+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:16:20+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:16:21+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1462875
+time="2022-07-11T02:16:50+08:00" level=info msg="enter calc randomx" height=971849 jobId=1917499 thread=0
+time="2022-07-11T02:16:50+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:16:50+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:16:51+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1917499
+time="2022-07-11T02:17:20+08:00" level=info msg="enter calc randomx" height=971849 jobId=1405683 thread=0
+time="2022-07-11T02:17:20+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:17:20+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:17:21+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1405683
+time="2022-07-11T02:17:50+08:00" level=info msg="enter calc randomx" height=971849 jobId=1009900 thread=0
+time="2022-07-11T02:17:50+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:17:50+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:17:51+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1009900
+time="2022-07-11T02:18:20+08:00" level=info msg="enter calc randomx" height=971849 jobId=1218474 thread=0
+time="2022-07-11T02:18:20+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:18:20+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:18:21+08:00" level=info msg="new mining info" capacity="0 H/s" height=971849 jobId=1218474
+time="2022-07-11T02:18:34+08:00" level=info msg="enter calc randomx" height=971850 jobId=1375692 thread=0
+time="2022-07-11T02:18:34+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:18:34+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:18:35+08:00" level=info msg="new mining info" capacity="0 H/s" height=971850 jobId=1375692
+time="2022-07-11T02:18:40+08:00" level=info msg="upload status"
+time="2022-07-11T02:19:04+08:00" level=info msg="enter calc randomx" height=971850 jobId=1176592 thread=0
+time="2022-07-11T02:19:04+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:19:04+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:19:05+08:00" level=info msg="new mining info" capacity="0 H/s" height=971850 jobId=1176592
+time="2022-07-11T02:19:34+08:00" level=info msg="enter calc randomx" height=971850 jobId=1683959 thread=0
+time="2022-07-11T02:19:34+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:19:34+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:19:35+08:00" level=info msg="new mining info" capacity="0 H/s" height=971850 jobId=1683959
+time="2022-07-11T02:20:04+08:00" level=info msg="enter calc randomx" height=971850 jobId=1143902 thread=0
+time="2022-07-11T02:20:04+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:20:04+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:20:05+08:00" level=info msg="new mining info" capacity="0 H/s" height=971850 jobId=1143902
+time="2022-07-11T02:20:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1525438 thread=0
+time="2022-07-11T02:20:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:20:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:20:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1525438
+time="2022-07-11T02:20:39+08:00" level=info msg="enter calc randomx" height=971851 jobId=1483367 thread=0
+time="2022-07-11T02:20:39+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:20:39+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:20:40+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1483367
+time="2022-07-11T02:21:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1790824 thread=0
+time="2022-07-11T02:21:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:21:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:21:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1790824
+time="2022-07-11T02:21:39+08:00" level=info msg="enter calc randomx" height=971851 jobId=1976585 thread=0
+time="2022-07-11T02:21:39+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:21:39+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:21:40+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1976585
+time="2022-07-11T02:21:41+08:00" level=info msg="upload status"
+time="2022-07-11T02:22:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1353277 thread=0
+time="2022-07-11T02:22:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:22:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:22:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1353277
+time="2022-07-11T02:22:39+08:00" level=info msg="enter calc randomx" height=971851 jobId=1465122 thread=0
+time="2022-07-11T02:22:39+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:22:39+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:22:40+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1465122
+time="2022-07-11T02:23:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1187082 thread=0
+time="2022-07-11T02:23:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:23:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:23:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1187082
+time="2022-07-11T02:23:39+08:00" level=info msg="enter calc randomx" height=971851 jobId=1653308 thread=0
+time="2022-07-11T02:23:39+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:23:39+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:23:40+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1653308
+time="2022-07-11T02:24:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1236173 thread=0
+time="2022-07-11T02:24:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:24:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:24:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1236173
+time="2022-07-11T02:24:39+08:00" level=info msg="enter calc randomx" height=971851 jobId=1917279 thread=0
+time="2022-07-11T02:24:39+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:24:39+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:24:40+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1917279
+time="2022-07-11T02:24:43+08:00" level=info msg="upload status"
+time="2022-07-11T02:25:09+08:00" level=info msg="enter calc randomx" height=971851 jobId=1886842 thread=0
+time="2022-07-11T02:25:09+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:25:09+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:25:10+08:00" level=info msg="new mining info" capacity="0 H/s" height=971851 jobId=1886842
+time="2022-07-11T02:25:20+08:00" level=info msg="enter calc randomx" height=971852 jobId=1190262 thread=0
+time="2022-07-11T02:25:20+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:25:20+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:25:21+08:00" level=info msg="new mining info" capacity="0 H/s" height=971852 jobId=1190262
+time="2022-07-11T02:25:50+08:00" level=info msg="enter calc randomx" height=971852 jobId=1684917 thread=0
+time="2022-07-11T02:25:50+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:25:50+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:25:51+08:00" level=info msg="new mining info" capacity="0 H/s" height=971852 jobId=1684917
+time="2022-07-11T02:26:00+08:00" level=info msg="enter calc randomx" height=971853 jobId=1044705 thread=0
+time="2022-07-11T02:26:00+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:26:00+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:26:01+08:00" level=info msg="new mining info" capacity="0 H/s" height=971853 jobId=1044705
+time="2022-07-11T02:26:30+08:00" level=info msg="enter calc randomx" height=971853 jobId=1091839 thread=0
+time="2022-07-11T02:26:30+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:26:30+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:26:31+08:00" level=info msg="new mining info" capacity="0 H/s" height=971853 jobId=1091839
+time="2022-07-11T02:27:05+08:00" level=info msg="enter calc randomx" height=971853 jobId=1384016 thread=0
+time="2022-07-11T02:27:05+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:27:05+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:27:06+08:00" level=info msg="new mining info" capacity="0 H/s" height=971853 jobId=1384016
+time="2022-07-11T02:27:07+08:00" level=info msg="enter calc randomx" height=971854 jobId=1268802 thread=0
+time="2022-07-11T02:27:07+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:27:07+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:27:08+08:00" level=info msg="new mining info" capacity="0 H/s" height=971854 jobId=1268802
+time="2022-07-11T02:27:36+08:00" level=info msg="enter calc randomx" height=971854 jobId=1947601 thread=0
+time="2022-07-11T02:27:36+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:27:36+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:27:37+08:00" level=info msg="new mining info" capacity="0 H/s" height=971854 jobId=1947601
+time="2022-07-11T02:27:44+08:00" level=info msg="upload status"
+time="2022-07-11T02:28:06+08:00" level=info msg="enter calc randomx" height=971854 jobId=1980909 thread=0
+time="2022-07-11T02:28:06+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:28:06+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:28:07+08:00" level=info msg="new mining info" capacity="0 H/s" height=971854 jobId=1980909
+time="2022-07-11T02:28:35+08:00" level=info msg="enter calc randomx" height=971854 jobId=1324614 thread=0
+time="2022-07-11T02:28:35+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:28:35+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:28:36+08:00" level=info msg="new mining info" capacity="0 H/s" height=971854 jobId=1324614
+time="2022-07-11T02:29:05+08:00" level=info msg="enter calc randomx" height=971854 jobId=1991345 thread=0
+time="2022-07-11T02:29:05+08:00" level=info msg="Init RandomX" flag="largepages,fullmem" seed=_____-tavr7k968P5uLmtGwGR1NryXxx3Rsw-71-T7M
+time="2022-07-11T02:29:05+08:00" level=error msg="RandomX AllocCache fail" error="failed to alloc mem for rxCache" f7="{loggers.go,logging.CPrint,168}" f8="{Jvy3lAqo.go,fRrZ_orl.(*VxU_eIyE).pdTfBzzK,1}" f9="{onYHO7v0.go,fRrZ_orl.(*VxU_eIyE).kZUukXa3,1}"
+time="2022-07-11T02:29:06+08:00" level=info msg="new mining info" capacity="0 H/s" height=971854 jobId=1991345

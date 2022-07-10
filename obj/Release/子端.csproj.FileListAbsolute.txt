@@ -1,9 +1,3 @@
-E:\群控\客户端\obj\Release\子端.csproj.AssemblyReference.cache
-E:\群控\客户端\obj\Release\子端.csproj.SuggestedBindingRedirects.cache
-E:\群控\客户端\obj\Release\子端.MainFrom.resources
-E:\群控\客户端\obj\Release\子端.Properties.Resources.resources
-E:\群控\客户端\obj\Release\子端.csproj.GenerateResource.cache
-E:\群控\客户端\obj\Release\子端.csproj.CoreCompileInputs.cache
 E:\群控\客户端\bin\Release\子端.exe.config
 E:\群控\客户端\bin\Release\子端.exe
 E:\群控\客户端\bin\Release\子端.pdb
@@ -36,6 +30,12 @@ E:\群控\客户端\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 E:\群控\客户端\bin\Release\System.ValueTuple.xml
 E:\群控\客户端\bin\Release\System.Web.Http.xml
 E:\群控\客户端\bin\Release\System.Web.Http.SelfHost.xml
+E:\群控\客户端\obj\Release\子端.csproj.AssemblyReference.cache
+E:\群控\客户端\obj\Release\子端.csproj.SuggestedBindingRedirects.cache
+E:\群控\客户端\obj\Release\子端.MainFrom.resources
+E:\群控\客户端\obj\Release\子端.Properties.Resources.resources
+E:\群控\客户端\obj\Release\子端.csproj.GenerateResource.cache
+E:\群控\客户端\obj\Release\子端.csproj.CoreCompileInputs.cache
 E:\群控\客户端\obj\Release\子端.csproj.CopyComplete
 E:\群控\客户端\obj\Release\子端.exe
 E:\群控\客户端\obj\Release\子端.pdb

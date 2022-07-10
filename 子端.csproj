@@ -134,6 +134,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="bin\Debug\子端.exe.config" />
+    <None Include="bin\Release\子端.exe.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\子端.csproj.AssemblyReference.cache" />
@@ -256,6 +257,8 @@
     <Content Include="bin\Debug\System.Web.Http.xml" />
     <Content Include="bin\Debug\子端.exe" />
     <Content Include="bin\Debug\子端.pdb" />
+    <Content Include="bin\Release\子端.exe" />
+    <Content Include="bin\Release\子端.pdb" />
     <Content Include="obj\Debug\子端.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\子端.exe" />
     <Content Include="obj\Debug\子端.pdb" />

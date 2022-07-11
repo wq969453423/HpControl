@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Administrator\Desktop\新建文件夹\新建文件夹\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,9 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ConcurrencyRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -90,6 +91,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="OpenHardwareMonitorLib">
       <HintPath>OpenHardwareMonitor\OpenHardwareMonitorLib.dll</HintPath>
@@ -128,6 +130,7 @@
     </Reference>
     <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
@@ -167,14 +170,11 @@
     <Compile Include="Model\InPutInformationDto.cs" />
     <Compile Include="Model\InPutYamlTextDto.cs" />
     <Compile Include="Model\OutPutAllDto.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainFrom.resx">
       <DependentUpon>MainFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\子端.MainFrom.resources" />
-    <EmbeddedResource Include="obj\Debug\子端.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,89 +184,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="bin\Debug\子端.exe.config" />
-    <None Include="bin\Release\子端.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\子端.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\子端.csproj.CopyComplete" />
-    <None Include="obj\Debug\子端.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\子端.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\子端.csproj.SuggestedBindingRedirects.cache" />
     <None Include="packages.config" />
-    <None Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\.signature.p7s" />
-    <None Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\Microsoft.AspNet.WebApi.Client.5.2.9.nupkg" />
-    <None Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\.signature.p7s" />
-    <None Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\Content\web.config.transform" />
-    <None Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\Microsoft.AspNet.WebApi.Core.5.2.9.nupkg" />
-    <None Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\.signature.p7s" />
-    <None Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\Microsoft.AspNet.WebApi.SelfHost.5.2.9.nupkg" />
-    <None Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\.signature.p7s" />
-    <None Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\Microsoft.Extensions.Configuration.Abstractions.6.0.0.nupkg" />
-    <None Include="packages\Microsoft.Extensions.Primitives.6.0.0\.signature.p7s" />
-    <None Include="packages\Microsoft.Extensions.Primitives.6.0.0\buildTransitive\netcoreapp2.0\Microsoft.Extensions.Primitives.targets" />
-    <None Include="packages\Microsoft.Extensions.Primitives.6.0.0\buildTransitive\netcoreapp3.1\_._" />
-    <None Include="packages\Microsoft.Extensions.Primitives.6.0.0\Microsoft.Extensions.Primitives.6.0.0.nupkg" />
-    <None Include="packages\Newtonsoft.Json.6.0.4\.signature.p7s" />
-    <None Include="packages\Newtonsoft.Json.6.0.4\Newtonsoft.Json.6.0.4.nupkg" />
-    <None Include="packages\Newtonsoft.Json.6.0.4\tools\install.ps1" />
-    <None Include="packages\SunnyUI.3.2.1\.signature.p7s" />
-    <None Include="packages\SunnyUI.3.2.1\LICENSE" />
-    <None Include="packages\SunnyUI.3.2.1\SunnyUI.3.2.1.nupkg" />
-    <None Include="packages\SunnyUI.Common.3.2.0\.signature.p7s" />
-    <None Include="packages\SunnyUI.Common.3.2.0\SunnyUI.Common.3.2.0.nupkg" />
-    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
-    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
-    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
-    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
-    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
-    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
-    <None Include="packages\System.Memory.4.5.4\.signature.p7s" />
-    <None Include="packages\System.Memory.4.5.4\lib\netcoreapp2.1\_._" />
-    <None Include="packages\System.Memory.4.5.4\ref\netcoreapp2.1\_._" />
-    <None Include="packages\System.Memory.4.5.4\System.Memory.4.5.4.nupkg" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\.signature.p7s" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\System.Numerics.Vectors.4.5.0.nupkg" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\.signature.p7s" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.targets" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp3.1\_._" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg" />
-    <None Include="packages\System.ValueTuple.4.5.0\.signature.p7s" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\MonoAndroid10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\MonoTouch10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\netcoreapp2.0\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\netstandard2.0\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\uap10.0.16299\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\xamarinios10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\xamarinmac20\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\xamarintvos10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\lib\xamarinwatchos10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\MonoAndroid10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\MonoTouch10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\netcoreapp2.0\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\netstandard2.0\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\uap10.0.16299\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\xamarinios10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\xamarinmac20\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\xamarintvos10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\ref\xamarinwatchos10\_._" />
-    <None Include="packages\System.ValueTuple.4.5.0\System.ValueTuple.4.5.0.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -282,181 +200,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll" />
-    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml" />
-    <Content Include="bin\Debug\Microsoft.Extensions.Primitives.dll" />
-    <Content Include="bin\Debug\Microsoft.Extensions.Primitives.xml" />
-    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
-    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
-    <Content Include="bin\Debug\SunnyUI.Common.dll" />
-    <Content Include="bin\Debug\SunnyUI.dll" />
-    <Content Include="bin\Debug\SunnyUI.xml" />
-    <Content Include="bin\Debug\System.Buffers.dll" />
-    <Content Include="bin\Debug\System.Buffers.xml" />
-    <Content Include="bin\Debug\System.Memory.dll" />
-    <Content Include="bin\Debug\System.Memory.xml" />
-    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
-    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
-    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
-    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
-    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="bin\Debug\System.ValueTuple.dll" />
-    <Content Include="bin\Debug\System.ValueTuple.xml" />
-    <Content Include="bin\Debug\System.Web.Http.dll" />
-    <Content Include="bin\Debug\System.Web.Http.SelfHost.dll" />
-    <Content Include="bin\Debug\System.Web.Http.SelfHost.xml" />
-    <Content Include="bin\Debug\System.Web.Http.xml" />
-    <Content Include="bin\Debug\子端.exe" />
-    <Content Include="bin\Debug\子端.pdb" />
-    <Content Include="bin\Release\子端.exe" />
-    <Content Include="bin\Release\子端.pdb" />
-    <Content Include="obj\Debug\子端.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\子端.exe" />
-    <Content Include="obj\Debug\子端.pdb" />
     <Content Include="OpenHardwareMonitor\Aga.Controls.dll" />
     <Content Include="OpenHardwareMonitor\License.html" />
     <Content Include="OpenHardwareMonitor\OpenHardwareMonitor.exe" />
     <Content Include="OpenHardwareMonitor\OpenHardwareMonitorLib.dll" />
     <Content Include="OpenHardwareMonitor\OxyPlot.dll" />
     <Content Include="OpenHardwareMonitor\OxyPlot.WindowsForms.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.xml" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\netstandard2.0\System.Net.Http.Formatting.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\netstandard2.0\System.Net.Http.Formatting.xml" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.xml" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\NET.icon.png" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\NET_Library_EULA_ENU.txt" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.xml" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\NET.icon.png" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.9\NET_Library_EULA_ENU.txt" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\lib\net45\System.Web.Http.SelfHost.dll" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\lib\net45\System.Web.Http.SelfHost.xml" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\NET.icon.png" />
-    <Content Include="packages\Microsoft.AspNet.WebApi.SelfHost.5.2.9\NET_Library_EULA_ENU.txt" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\Icon.png" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.xml" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.xml" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\LICENSE.TXT" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\Icon.png" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.xml" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\net6.0\Microsoft.Extensions.Primitives.dll" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\net6.0\Microsoft.Extensions.Primitives.xml" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\netcoreapp3.1\Microsoft.Extensions.Primitives.xml" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.xml" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\LICENSE.TXT" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\Microsoft.Extensions.Primitives.6.0.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" />
-    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net40\SunnyUI.dll" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net40\SunnyUI.xml" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net472\SunnyUI.dll" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net472\SunnyUI.xml" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net6.0-windows7.0\SunnyUI.dll" />
-    <Content Include="packages\SunnyUI.3.2.1\lib\net6.0-windows7.0\SunnyUI.xml" />
-    <Content Include="packages\SunnyUI.3.2.1\SunnyUI.png" />
-    <Content Include="packages\SunnyUI.Common.3.2.0\lib\net40\SunnyUI.Common.dll" />
-    <Content Include="packages\SunnyUI.Common.3.2.0\lib\netstandard2.0\SunnyUI.Common.dll" />
-    <Content Include="packages\SunnyUI.Common.3.2.0\SunnyUI.png" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
-    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.4\LICENSE.TXT" />
-    <Content Include="packages\System.Memory.4.5.4\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Memory.4.5.4\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Memory.4.5.4\version.txt" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\LICENSE.TXT" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\version.txt" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\Icon.png" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net6.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net6.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\LICENSE.TXT" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.xml" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.xml" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.xml" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.xml" />
-    <Content Include="packages\System.ValueTuple.4.5.0\LICENSE.TXT" />
-    <Content Include="packages\System.ValueTuple.4.5.0\ref\net461\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\ref\net47\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\ref\portable-net40+sl4+win8+wp8\System.ValueTuple.dll" />
-    <Content Include="packages\System.ValueTuple.4.5.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.ValueTuple.4.5.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.ValueTuple.4.5.0\version.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

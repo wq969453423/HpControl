@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Controllers;
+using System.Web.Http.Dispatcher;
+using System.Web.Http.Filters;
 using System.Web.Http.SelfHost;
 
 namespace 子端.Controller
@@ -24,6 +27,7 @@ namespace 子端.Controller
         {
             return server.OpenAsync();
         }
+        
 
         public Task CloseHttpServer()
         {

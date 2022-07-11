@@ -14,6 +14,8 @@ using 子端.Model;
 
 namespace 子端.Controller
 {
+
+    [CustomAuthorize]
     public class MainFromController : ApiController
     {
         AppSettingsHelps appSettings;

@@ -262,6 +262,12 @@
     <Content Include="obj\Debug\子端.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\子端.exe" />
     <Content Include="obj\Debug\子端.pdb" />
+    <Content Include="OpenHardwareMonitor\Aga.Controls.dll" />
+    <Content Include="OpenHardwareMonitor\License.html" />
+    <Content Include="OpenHardwareMonitor\OpenHardwareMonitor.exe" />
+    <Content Include="OpenHardwareMonitor\OpenHardwareMonitorLib.dll" />
+    <Content Include="OpenHardwareMonitor\OxyPlot.dll" />
+    <Content Include="OpenHardwareMonitor\OxyPlot.WindowsForms.dll" />
     <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll" />
     <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.xml" />
     <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\netstandard2.0\System.Net.Http.Formatting.dll" />

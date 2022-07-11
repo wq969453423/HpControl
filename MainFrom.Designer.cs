@@ -5,9 +5,9 @@ namespace 子端
 {
     partial class MainFrom
     {
-        public static MainFrom mainfromInstance { get; set; }
 
-        
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -34,7 +34,6 @@ namespace 子端
         /// </summary>
         private void InitializeComponent()
         {
-
             
 
             this.uiButton1 = new Sunny.UI.UIButton();
@@ -97,7 +96,7 @@ namespace 子端
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            mainfromInstance = this;
+            
 
         }
 

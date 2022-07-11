@@ -235,7 +235,7 @@ namespace 子端.Controller
         {
             //先停止
             await WriteEndMiner();
-            Thread.Sleep(150);
+            Thread.Sleep(1000);
             p.StandardInput.WriteLine(path+ "hpool-miner-ar-console.exe");
             //运行miner
             return await Task.FromResult(new { code = 200, msg = "成功" }); ;

@@ -9,7 +9,7 @@ namespace 子端
 {
     public partial class MainFrom : Form
     {
-        
+        public static MainFrom mainfromInstance;
         public static Process p { get; set; }
         AppSettingsHelps appSettings;
         public MainFrom()
@@ -27,6 +27,7 @@ namespace 子端
             //开机自启
             
             kjzq();
+            mainfromInstance = this;
         }
 
         private async void kjzq() {

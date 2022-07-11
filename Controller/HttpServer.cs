@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -20,6 +21,13 @@ namespace 子端.Controller
             var config = new HttpSelfHostConfiguration($"http://{ip}:{port}");
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{action}");
+            config.Formatters
+                .JsonFormatter.MediaTypeMappings.Add(
+                new QueryStringMapping("datatype", "json", "application/json"));
+
+            //var cors = new EnableCorsAttribute("*", "*", "*"); //跨域允许设置
+            
+            //config.EnableCors(cors);
             server = new HttpSelfHostServer(config);
         }
 

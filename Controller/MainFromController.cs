@@ -1,5 +1,7 @@
 ﻿
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -61,6 +63,8 @@ namespace 子端.Controller
                     case (int)InformationTypeEnum.读取配置文件:
                         resDto.YamlText = await ReadYamlText(model.YamlPath);
                         break;
+                    default:
+                        break;
                 }
                 if (item == (int)InformationTypeEnum.所有)
                 {
@@ -68,7 +72,7 @@ namespace 子端.Controller
                 }
             }
             
-            return Task.FromResult(new { datadd = resDto, code = 200, msg = "成功" });
+            return Task.FromResult(new { data = resDto, code = 200, msg = "成功" });
         }
 
 
@@ -120,8 +124,16 @@ namespace 子端.Controller
                     content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 }
                 var httpResponse = await client.PostAsync(url, content);
-                string result = await httpResponse.Content.ReadAsStringAsync();
-                var ResultData = JsonConvert.DeserializeObject<OutPutAllDto>(result);
+                string result = httpResponse.Content.ReadAsStringAsync().Result;
+                var ResultObj = JsonConvert.DeserializeObject<JObject>(result);
+                var ResultData= ResultObj["Result"]["data"].ToObject<OutPutAllDto>();
+                ResultData.YamlPath = item.YamlPath;
+                ResultData.Ip = item.Ip;
+                ResultData.Alias = item.Alias;
+                ResultData.Remarks = item.Remarks;
+                ResultData.UserId = item.UserId;
+                ResultData.machineId = item.machineId;
+                ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
                 resListData.Add(ResultData);
             }
             

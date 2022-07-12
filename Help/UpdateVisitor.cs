@@ -44,22 +44,22 @@ namespace 子端.Help
                         var item = computer.Hardware[i].Sensors[j];
                         if (type == SensorType.Power && item.Name == "CPU Package")
                         {
-                            res.CpuPower = (decimal)item.Max;
+                            res.CpuPower = Math.Round((decimal)item.Max, 2);
                         }
                         else if (type == SensorType.Clock)
                         {
                             if ((decimal)item.Max > res.CpuFrequency)
                             {
-                                res.CpuFrequency = (decimal)item.Max;
+                                res.CpuFrequency = Math.Round((decimal)item.Max, 2);
                             }
                         }
                         else if (type == SensorType.Temperature && item.Name == "CPU Package")
                         {
-                            res.CpuTemperature = (decimal)item.Max;
+                            res.CpuTemperature = Math.Round((decimal)item.Max, 2);
                         }
                         else if (type == SensorType.Load && item.Name == "CPU Total")
                         {
-                            res.CpuTemperature = (decimal)item.Max;
+                            res.CpuLoad = Math.Round((decimal)item.Max, 2);
                         }
                     }
                 }
@@ -71,11 +71,11 @@ namespace 子端.Help
                         var item = computer.Hardware[i].Sensors[j];
                         if (type == SensorType.Load)
                         {
-                            res.MemoryLoad = (decimal)item.Max;
+                            res.MemoryLoad = Math.Round((decimal)item.Max, 2);
                         }
                         else if (type == SensorType.Data && item.Name == "Used Memory")
                         {
-                            res.MemorySize = (decimal)item.Max;
+                            res.MemorySize = Math.Round((decimal)item.Max, 2);
                         }
                     }
                 }
@@ -88,7 +88,7 @@ namespace 子端.Help
                         {
                             if ((decimal)item.Max> res.SsdTemperature)
                             {
-                                res.SsdTemperature = (decimal)item.Max;
+                                res.SsdTemperature = Math.Round((decimal)item.Max, 2);
                             }
                             
                         }
@@ -96,7 +96,7 @@ namespace 子端.Help
                         {
                             if ((decimal)item.Max > res.SsdLoad)
                             {
-                                res.SsdLoad = (decimal)item.Max;
+                                res.SsdLoad = Math.Round((decimal)item.Max, 2);
                             }
                         }
                     }

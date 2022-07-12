@@ -116,7 +116,7 @@ namespace 子端.Help
                 .Replace("# E.g http://127.0.0.1:8888 socket5://127.0.0.1:8888", "")
                 .Replace("# socket5 or http proxy", "");
             }
-            input.Replace(" ", "");
+            input=input.Replace(" ", "");
 
 
             var pathIndex = input.IndexOf("path:");

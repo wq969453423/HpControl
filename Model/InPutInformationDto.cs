@@ -9,11 +9,17 @@ namespace 子端.Model
     public class InPutInformationDto
     {
 
-        public List<int> type { get; set; }
-
-        public string YamlPath { get; set; }
+        public int machineId { get; set; }
+        public int UserId { get; set; }
         public string Ip { get; set; }
 
+        public string Alias { get; set; }
+        public string Remarks { get; set; }
+        public string CreateTime { get; set; }
+
+        public string YamlPath { get; set; }
+
+        public List<int> type { get; set; }
         public InPutYamlTextDto yaml { get; set; }
     }
 }

@@ -8,6 +8,18 @@ namespace 子端.Model
 {
     public class OutPutAllDto
     {
+        public int machineId { get; set; }
+        public int UserId { get; set; }
+        public string Ip { get; set; }
+
+        public string Alias { get; set; }
+        public string Remarks { get; set; }
+        public string CreateTime { get; set; }
+        public string YamlPath { get; set; }
+
+
+
+
         //配置文件
         public InPutYamlTextDto YamlText { get; set; }
         //当前算力
@@ -20,11 +32,11 @@ namespace 子端.Model
         {
             get
             {
-                if (SsdTemperature < 60)
+                if (CpuTemperature < 60)
                 {
                     return "green";
                 }
-                else if (SsdTemperature < 80)
+                else if (CpuTemperature < 80)
                 {
                     return "blue";
                 }
@@ -56,7 +68,7 @@ namespace 子端.Model
         {
             get
             {
-                if (SsdTemperature > 95)
+                if (MemoryLoad > 95)
                 {
                     return "red";
                 }
@@ -74,7 +86,7 @@ namespace 子端.Model
 
         public string SsdTemperatureColor { 
             get {
-                if (SsdTemperature<40)
+                if (SsdTemperature < 40)
                 {
                     return "green";
                 }
@@ -97,15 +109,15 @@ namespace 子端.Model
         {
             get
             {
-                if (SsdTemperature < 40)
+                if (SsdLoad < 40)
                 {
                     return "green";
                 }
-                else if (SsdTemperature < 60)
+                else if (SsdLoad < 60)
                 {
                     return "blue";
                 }
-                else if (SsdTemperature > 60)
+                else if (SsdLoad > 60)
                 {
                     return "red";
                 }

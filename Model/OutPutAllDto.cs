@@ -23,7 +23,7 @@ namespace 子端.Model
         //配置文件
         public InPutYamlTextDto YamlText { get; set; }
         //当前算力
-        public string CalculatingPower { get; set; }
+        public decimal CalculatingPower { get; set; }
 
 
         //cpu温度

@@ -78,7 +78,7 @@ namespace 子端
         {
             //往配置文件写入
             
-            if (e.Data.Contains("H/s"))
+            if (e.Data.Contains("KH/s"))
             {
                 await appSettings.SetSettings("NowText", e.Data);
                 

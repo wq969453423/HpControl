@@ -96,6 +96,8 @@ namespace 子端.Controller
                     case (int)InformationTypeEnum.设置配置文件:
                         await WriteYamlText(model.yaml);
                         break;
+                    default:
+                        break;
                 }
             }
             return Task.FromResult(new { code = 200, msg = "成功" });
@@ -113,28 +115,44 @@ namespace 子端.Controller
             List<OutPutAllDto> resListData=new List<OutPutAllDto>();
             foreach (var item in list)
             {
-                var url = "http://" + item.Ip + ":8081/api/MainFrom/GetWhole";
-                //新建hppt请求
-                var client = new HttpClient();
-                var parms = JsonConvert.SerializeObject(item);
-                HttpContent content = null;
-                if (parms != null)
+                try
                 {
-                    content = new StringContent(parms);
-                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var url = "http://" + item.Ip + ":8081/api/MainFrom/GetWhole";
+                    //新建hppt请求
+                    var client = new HttpClient();
+                    var parms = JsonConvert.SerializeObject(item);
+                    HttpContent content = null;
+                    if (parms != null)
+                    {
+                        content = new StringContent(parms);
+                        content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    }
+                    var httpResponse = await client.PostAsync(url, content);
+                    string result = httpResponse.Content.ReadAsStringAsync().Result;
+                    var ResultObj = JsonConvert.DeserializeObject<JObject>(result);
+                    var ResultData = ResultObj["Result"]["data"].ToObject<OutPutAllDto>();
+                    ResultData.YamlPath = item.YamlPath;
+                    ResultData.Ip = item.Ip;
+                    ResultData.Alias = item.Alias;
+                    ResultData.Remarks = item.Remarks;
+                    ResultData.UserId = item.UserId;
+                    ResultData.machineId = item.machineId;
+                    ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
+                    resListData.Add(ResultData);
                 }
-                var httpResponse = await client.PostAsync(url, content);
-                string result = httpResponse.Content.ReadAsStringAsync().Result;
-                var ResultObj = JsonConvert.DeserializeObject<JObject>(result);
-                var ResultData= ResultObj["Result"]["data"].ToObject<OutPutAllDto>();
-                ResultData.YamlPath = item.YamlPath;
-                ResultData.Ip = item.Ip;
-                ResultData.Alias = item.Alias;
-                ResultData.Remarks = item.Remarks;
-                ResultData.UserId = item.UserId;
-                ResultData.machineId = item.machineId;
-                ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
-                resListData.Add(ResultData);
+                catch (Exception e)
+                {
+                    var ResultData = new OutPutAllDto();
+                    ResultData.YamlPath = item.YamlPath;
+                    ResultData.Ip = item.Ip;
+                    ResultData.Alias = item.Alias;
+                    ResultData.Remarks = item.Remarks;
+                    ResultData.UserId = item.UserId;
+                    ResultData.machineId = item.machineId;
+                    ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
+                    resListData.Add(ResultData);
+                }
+               
             }
             
             return await Task.FromResult(new { data = resListData, code = 200, msg = "成功" });
@@ -162,7 +180,7 @@ namespace 子端.Controller
                     content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 }
                 var httpResponse = await client.PostAsync(url, content);
-                string result = await httpResponse.Content.ReadAsStringAsync();
+                string result = httpResponse.Content.ReadAsStringAsync().Result;
                 var ResultData = JsonConvert.DeserializeObject<HttpResponseMessage>(result);
                 resListData.Add(ResultData.StatusCode.ToString());
             }
@@ -202,11 +220,27 @@ namespace 子端.Controller
         }
 
 
-        private async Task<string> ReadCalculatingPower()
+        private async Task<decimal> ReadCalculatingPower()
         {
             //获取当前算力
-            var restext = appSettings.GetSettings("NowText");
-            return await Task.Run(() => restext);
+            decimal CalculatingPower = 0;
+             
+            var restext = (await appSettings.GetSettings("NowText")).Replace(" ","");
+            var capacityIndex = restext.IndexOf("capacity=\"");
+            var HKIndex = restext.IndexOf("KH/s\"");
+            if (capacityIndex>0 && HKIndex>0)
+            {
+                try
+                {
+                    CalculatingPower = decimal.Parse(restext.Substring(capacityIndex + 10, HKIndex - (capacityIndex + 1)));
+                }
+                catch (Exception)
+                {
+                    CalculatingPower = 0;
+                }
+               
+            }
+            return await Task.FromResult(CalculatingPower);
         }
 
         #endregion

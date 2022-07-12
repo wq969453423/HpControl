@@ -11,8 +11,8 @@ namespace 子端.Model
 
         public List<int> type { get; set; }
 
-        public string path { get; set; }
-        public string ip { get; set; }
+        public string YamlPath { get; set; }
+        public string Ip { get; set; }
 
         public InPutYamlTextDto yaml { get; set; }
     }

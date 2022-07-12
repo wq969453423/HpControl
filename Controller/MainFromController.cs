@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using 子端.Help;
 using 子端.Model;
@@ -15,7 +16,6 @@ using 子端.Model;
 namespace 子端.Controller
 {
 
-    [CustomAuthorize]
     public class MainFromController : ApiController
     {
         AppSettingsHelps appSettings;
@@ -47,9 +47,10 @@ namespace 子端.Controller
                 switch (item)
                 {
                     case (int)InformationTypeEnum.所有:
-                        resDto.YamlText = await ReadYamlText(model.path);
-                        resDto.CpuTemperature = await ReadCpuTemperature();
-                        resDto.CalculatingPower = await ReadCalculatingPower();
+                        UpdateVisitor Visitor = new UpdateVisitor();
+                        //获取当前机器温度
+                        resDto = Visitor.GetSystemInfo();
+                        resDto.YamlText = await ReadYamlText(model.YamlPath);
                         break;
                     case (int)InformationTypeEnum.算力:
                         resDto.CalculatingPower = await ReadCalculatingPower();
@@ -58,7 +59,7 @@ namespace 子端.Controller
                         resDto.CpuTemperature = await ReadCpuTemperature();
                         break;
                     case (int)InformationTypeEnum.读取配置文件:
-                        resDto.YamlText = await ReadYamlText(model.path);
+                        resDto.YamlText = await ReadYamlText(model.YamlPath);
                         break;
                 }
                 if (item == (int)InformationTypeEnum.所有)
@@ -66,7 +67,8 @@ namespace 子端.Controller
                     break;
                 }
             }
-            return Task.FromResult(new { data = resDto, code = 200, msg = "成功" });
+            
+            return Task.FromResult(new { datadd = resDto, code = 200, msg = "成功" });
         }
 
 
@@ -79,10 +81,10 @@ namespace 子端.Controller
                 switch (item)
                 {
                     case (int)InformationTypeEnum.运行bat:
-                        await WriteStartBat(model.path);
+                        await WriteStartBat(model.YamlPath);
                         break;
                     case (int)InformationTypeEnum.启动:
-                        await WriteStartMiner(model.path);
+                        await WriteStartMiner(model.YamlPath);
                         break;
                     case (int)InformationTypeEnum.停止:
                         await WriteEndMiner();
@@ -107,7 +109,7 @@ namespace 子端.Controller
             List<OutPutAllDto> resListData=new List<OutPutAllDto>();
             foreach (var item in list)
             {
-                var url = "http://" + item.ip + ":8081/api/MainFrom/GetWhole";
+                var url = "http://" + item.Ip + ":8081/api/MainFrom/GetWhole";
                 //新建hppt请求
                 var client = new HttpClient();
                 var parms = JsonConvert.SerializeObject(item);
@@ -122,7 +124,7 @@ namespace 子端.Controller
                 var ResultData = JsonConvert.DeserializeObject<OutPutAllDto>(result);
                 resListData.Add(ResultData);
             }
-
+            
             return await Task.FromResult(new { data = resListData, code = 200, msg = "成功" });
         }
 
@@ -137,7 +139,7 @@ namespace 子端.Controller
             List<string> resListData = new List<string>();
             foreach (var item in list)
             {
-                var url = "http://" + item.ip + ":8081/api/MainFrom/SetWhole";
+                var url = "http://" + item.Ip + ":8081/api/MainFrom/SetWhole";
                 //新建hppt请求
                 var client = new HttpClient();
                 var parms = JsonConvert.SerializeObject(item);
@@ -169,13 +171,13 @@ namespace 子端.Controller
         }
 
 
-        private async Task<List<string>> ReadCpuTemperature()
+        private async Task<decimal> ReadCpuTemperature()
         {
             UpdateVisitor Visitor=new UpdateVisitor();
             //获取当前机器温度
-            List<string> list= Visitor.GetSystemInfo();
+            OutPutAllDto list = Visitor.GetSystemInfo();
 
-            return await Task.FromResult(list);
+            return await Task.FromResult(list.CpuTemperature);
         }
 
 

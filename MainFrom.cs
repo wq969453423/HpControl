@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using 子端.Help;
 
@@ -10,22 +12,22 @@ namespace 子端
     public partial class MainFrom : Form
     {
         public static MainFrom mainfromInstance;
-        public static Process p { get; set; }
+        public static Process p1 { get; set; }
+        public static Process p2 { get; set; }
+        public static Process p3 { get; set; }
+        public static Process p4 { get; set; }
+
         AppSettingsHelps appSettings;
         public MainFrom()
         {
             InitializeComponent();
             StartApi();
             appSettings = new AppSettingsHelps();
-            p = CMDHelps.ExeCommand();
-            p.Start();
-            p.BeginOutputReadLine();
-            p.BeginErrorReadLine();
-            p.ErrorDataReceived += p_ErrorDataReceived;
-            p.OutputDataReceived += p_OutputDataReceived;
+
+
+            InitProcess();
 
             //开机自启
-            
             kjzq();
             mainfromInstance = this;
         }
@@ -50,15 +52,49 @@ namespace 子端
             await httpServer.StartHttpServer();
         }
 
+        //Process 初始化
+        public void InitProcess() {
 
-        public Process GetProcess() {
-            return  p;
+
+            p1 = CMDHelps.ExeCommand();
+            p1.Start();
+            p1.BeginOutputReadLine();
+            p1.BeginErrorReadLine();
+            p1.OutputDataReceived += p_OutputDataReceived1;
+
+
+            p2 = CMDHelps.ExeCommand();
+            p2.Start();
+            p2.BeginOutputReadLine();
+            p2.BeginErrorReadLine();
+            p2.OutputDataReceived += p_OutputDataReceived2;
+
+
+
+            p3 = CMDHelps.ExeCommand();
+            p3.Start();
+            p3.BeginOutputReadLine();
+            p3.BeginErrorReadLine();
+            p3.OutputDataReceived += p_OutputDataReceived3;
+
+
+            p4 = CMDHelps.ExeCommand();
+            p4.Start();
+            p4.BeginOutputReadLine();
+            p4.BeginErrorReadLine();
+            p4.OutputDataReceived += p_OutputDataReceived4;
         }
 
-        public void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            
+        public List<Process> GetProcess() {
+            List <Process> processList = new List < Process >();
+            processList.Add(p1);
+            processList.Add(p2);
+            processList.Add(p3);
+            processList.Add(p4);
+            return processList;
         }
+
+
         public delegate void SetTextCallback(string text);
         public void SetText(string text)
         {
@@ -67,58 +103,84 @@ namespace 子端
             if (this.textBox1.InvokeRequired)
             {
                 SetTextCallback d = new SetTextCallback(SetText);
-                this.Invoke(d, new object[] { text });
+                this.Invoke(d, new object[] {text + "\r\n" });
             }
             else
             {
-                this.textBox1.AppendText(text); 
+                this.textBox1.AppendText(text+ "\r\n"); 
             }
         }
-        public async void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
+
+
+        #region cmd触发
+
+        public async Task setCapacity(string key,string data) 
+        {
+            decimal CalculatingPower = 0;
+            var capacityIndex = data.IndexOf("capacity=\"");
+            var HKIndex = data.IndexOf("KH/s\"");
+            if (capacityIndex > 0 && HKIndex > 0)
+            {
+                try
+                {
+                    CalculatingPower = decimal.Parse(data.Substring(capacityIndex + 10, HKIndex - (capacityIndex + 1)));
+                }
+                catch (Exception)
+                {
+                    CalculatingPower = 0;
+                }
+
+            }
+            await appSettings.SetSettings(key, CalculatingPower.ToString());
+            SetText("\r\n" + data);
+        }
+
+        public async void p_OutputDataReceived1(object sender, DataReceivedEventArgs e)
         {
             //往配置文件写入
-            
             if (e.Data.Contains("KH/s"))
             {
-                await appSettings.SetSettings("NowText", e.Data);
-                
+                await setCapacity("NowText1",e.Data);
+                SetText("1算力：" + e.Data);
             }
-            SetText("\r\n"+e.Data);
-
         }
-
-        private async void uiButton2_Click(object sender, EventArgs e)
+        public async void p_OutputDataReceived2(object sender, DataReceivedEventArgs e)
         {
-            using (var process = CMDHelps.ExeCommand())
+            //往配置文件写入
+            if (e.Data.Contains("KH/s"))
             {
-                process.Start();
-                process.OutputDataReceived += p_OutputDataReceived;
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
-                process.Close();
+                await setCapacity("NowText2", e.Data);
+                SetText("2算力：" + e.Data);
             }
-            Thread.Sleep(150);
-            var path = await appSettings.GetSettings("YamlPath");
-            p.StandardInput.WriteLine(path + "hpool-miner-ar-console.exe");
-
         }
-
-        private void uiButton1_Click(object sender, EventArgs e)
+        public async void p_OutputDataReceived3(object sender, DataReceivedEventArgs e)
         {
-            using (var process = CMDHelps.ExeCommand())
+            //往配置文件写入
+            if (e.Data.Contains("KH/s"))
             {
-                process.Start();
-                process.OutputDataReceived += p_OutputDataReceived;
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                process.StandardInput.WriteLine("taskkill /im hpool-miner-ar-console.exe /f");
-                process.Close();
-            };
+                await setCapacity("NowText3", e.Data);
+                SetText("3算力：" + e.Data);
+            }
         }
-        
+        public async void p_OutputDataReceived4(object sender, DataReceivedEventArgs e)
+        {
+            //往配置文件写入
+            if (e.Data.Contains("KH/s"))
+            {
+                await setCapacity("NowText4", e.Data);
+                SetText("4算力：" + e.Data);
+            }
+        }
+
+
+        #endregion
+
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+
+
         }
 
 

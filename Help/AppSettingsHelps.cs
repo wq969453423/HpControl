@@ -71,7 +71,7 @@ namespace 子端.Help
             return true;
         }
 
-        public async Task<InPutYamlTextDto>  ReadFile(string filePath, string fileName = "config.yaml")
+        public async Task<InPutYamlTextDto>  ReadFile(string filePath, string fileName = "\\config.yaml")
         {
 
             StreamReader sr = new StreamReader(filePath + fileName);
@@ -113,10 +113,11 @@ namespace 子端.Help
                 .Replace("# Calculate randomx threads, 0 use all threads", "")
                 .Replace("# 下面配置改为", "")
                 .Replace("# 绑定CPU开始序号", "")
-                .Replace("# E.g http://127.0.0.1:8888 socket5://127.0.0.1:8888", "")
-                .Replace("# socket5 or http proxy", "");
+                .Replace("# E.g http://127.0.0.1:8888 socks5://127.0.0.1:8888", "")
+                .Replace("# socket5 or http proxy", "")
+                .Replace(" ", "");
             }
-            input=input.Replace(" ", "");
+
 
 
             var pathIndex = input.IndexOf("path:");

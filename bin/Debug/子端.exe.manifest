@@ -330,14 +330,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="子端.exe" size="62992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="子端.exe" size="72720">
       <assemblyIdentity name="子端" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jm25Xna4Gr+e4L5KURzG+dj3rAJvGpxNAdUVZMsU7jo=</dsig:DigestValue>
+        <dsig:DigestValue>yvETerFWuqUowZARamd/eEVjuvKs0mNk5XuDIzRHYDM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -395,13 +395,13 @@
       <dsig:DigestValue>ySz+QCbvIxnISqs5LydOvesTXbhRI/8ORO30qZsFx9A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="子端.exe.config" size="2333">
+  <file name="子端.exe.config" size="2429">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>uATpnlsyeqTbhTWhTxgH+QeBIdCFD5n2e3e7xfC29GY=</dsig:DigestValue>
+      <dsig:DigestValue>krr4ZkhI6fK8xRiEpNzh5uZ0ObcYdSyZeZOuOhtk5OQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

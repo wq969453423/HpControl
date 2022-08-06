@@ -1,0 +1,4 @@
+time="2022-08-06T23:45:24+08:00" level=info msg="Logger Configuration." fields.level=info path=./log
+time="2022-08-06T23:46:21+08:00" level=info msg="Logger Configuration." fields.level=info path=./log
+time="2022-08-06T23:48:34+08:00" level=info msg="Logger Configuration." fields.level=info path=./log
+time="2022-08-06T23:54:50+08:00" level=info msg="Logger Configuration." fields.level=info path=./log

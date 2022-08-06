@@ -24,8 +24,10 @@ namespace 子端
             StartApi();
             appSettings = new AppSettingsHelps();
 
-
-            InitProcess();
+            p1Start();
+            p2Start();
+            p3Start();
+            p4Start();
 
             //开机自启
             kjzq();
@@ -33,13 +35,13 @@ namespace 子端
         }
 
         private async void kjzq() {
-            var SelfStarting = await appSettings.GetSettings("SelfStarting");
+            var SelfStarting = appSettings.GetSettings("SelfStarting");
             if (SelfStarting == "false") {
                 string execPath = Application.ExecutablePath;
                 RegistryKey rk = Registry.LocalMachine;
                 RegistryKey rk2 = rk.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
                 rk2.SetValue("MyExec", execPath);
-                await appSettings.SetSettings("SelfStarting", "true");
+                appSettings.SetSettings("SelfStarting", "true");
                 rk2.Dispose();
                 rk.Dispose();
             }
@@ -52,32 +54,35 @@ namespace 子端
             await httpServer.StartHttpServer();
         }
 
-        //Process 初始化
-        public void InitProcess() {
 
-
+        public void p1Start() {
             p1 = CMDHelps.ExeCommand();
             p1.Start();
             p1.BeginOutputReadLine();
             p1.BeginErrorReadLine();
             p1.OutputDataReceived += p_OutputDataReceived1;
+        }
 
-
+        public void p2Start()
+        {
             p2 = CMDHelps.ExeCommand();
             p2.Start();
             p2.BeginOutputReadLine();
             p2.BeginErrorReadLine();
             p2.OutputDataReceived += p_OutputDataReceived2;
+        }
 
-
-
+        public void p3Start()
+        {
             p3 = CMDHelps.ExeCommand();
             p3.Start();
             p3.BeginOutputReadLine();
             p3.BeginErrorReadLine();
             p3.OutputDataReceived += p_OutputDataReceived3;
+        }
 
-
+        public void p4Start()
+        {
             p4 = CMDHelps.ExeCommand();
             p4.Start();
             p4.BeginOutputReadLine();
@@ -114,7 +119,7 @@ namespace 子端
 
         #region cmd触发
 
-        public async Task setCapacity(string key,string data) 
+        public void setCapacity(string key,string data) 
         {
             decimal CalculatingPower = 0;
             var capacityIndex = data.IndexOf("capacity=\"");
@@ -131,44 +136,60 @@ namespace 子端
                 }
 
             }
-            await appSettings.SetSettings(key, CalculatingPower.ToString());
+            appSettings.SetSettings(key, CalculatingPower.ToString());
             SetText("\r\n" + data);
         }
 
-        public async void p_OutputDataReceived1(object sender, DataReceivedEventArgs e)
+        public void p_OutputDataReceived1(object sender, DataReceivedEventArgs e)
         {
-            //往配置文件写入
-            if (e.Data.Contains("KH/s"))
+            if (e.Data!=null)
             {
-                await setCapacity("NowText1",e.Data);
-                SetText("1算力：" + e.Data);
+                //往配置文件写入
+                if (e.Data.Contains("KH/s"))
+                {
+                    setCapacity("NowText1", e.Data);
+                    SetText("1算力：" + e.Data);
+                }
+                else
+                {
+                    SetText(e.Data);
+                }
+
+            }
+
+        }
+        public void p_OutputDataReceived2(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                if (e.Data.Contains("KH/s"))
+                {
+                    setCapacity("NowText2", e.Data);
+                    SetText("2算力：" + e.Data);
+                }
             }
         }
-        public async void p_OutputDataReceived2(object sender, DataReceivedEventArgs e)
+        public void p_OutputDataReceived3(object sender, DataReceivedEventArgs e)
         {
-            //往配置文件写入
-            if (e.Data.Contains("KH/s"))
+            if (e.Data != null)
             {
-                await setCapacity("NowText2", e.Data);
-                SetText("2算力：" + e.Data);
+                if (e.Data.Contains("KH/s"))
+                {
+                    setCapacity("NowText3", e.Data);
+                    SetText("3算力：" + e.Data);
+                }
             }
+            
         }
-        public async void p_OutputDataReceived3(object sender, DataReceivedEventArgs e)
+        public void p_OutputDataReceived4(object sender, DataReceivedEventArgs e)
         {
-            //往配置文件写入
-            if (e.Data.Contains("KH/s"))
+            if (e.Data != null)
             {
-                await setCapacity("NowText3", e.Data);
-                SetText("3算力：" + e.Data);
-            }
-        }
-        public async void p_OutputDataReceived4(object sender, DataReceivedEventArgs e)
-        {
-            //往配置文件写入
-            if (e.Data.Contains("KH/s"))
-            {
-                await setCapacity("NowText4", e.Data);
-                SetText("4算力：" + e.Data);
+                if (e.Data.Contains("KH/s"))
+                {
+                    setCapacity("NowText4", e.Data);
+                    SetText("4算力：" + e.Data);
+                }
             }
         }
 

@@ -15,14 +15,17 @@ namespace 子端.Model
         public string Alias { get; set; }
         public string Remarks { get; set; }
         public string CreateTime { get; set; }
-        public List<string> YamlPath { get; set; }
+        public string YamlPath { get; set; }
 
 
         //配置文件
-        public List<InPutYamlTextDto> YamlText { get; set; }
+        public InPutYamlTextDto YamlText { get; set; }
         //当前算力
-        public List<decimal> CalculatingPower { get; set; }
+        public decimal CalculatingPower { get; set; }
 
+        public int BeginCore { get; set; }
+
+        public int EndCore { get; set; }
 
         //cpu温度
         public decimal CpuTemperature { get; set; }
@@ -44,7 +47,7 @@ namespace 子端.Model
                 }
             }
         }
-
+        public int IpIndex { get; set; }
         //cpu功耗
         public decimal CpuPower { get; set; }
 

@@ -41,9 +41,9 @@ namespace 子端.Controller
         {
             for (int i = 0; i < 4; i++)
             {
-                if (i> model.YamlPath.Count)
+                if (i != model.IpIndex)
                 {
-                    await appSettings.SetSettings("NowText" + (i+1), "0");
+                    appSettings.SetSettings("NowText" + (i+1), "0");
                 }
             }
             
@@ -57,10 +57,10 @@ namespace 子端.Controller
                         //获取当前机器温度
                         resDto = Visitor.GetSystemInfo();
                         resDto.YamlText = await ReadYamlText(model.YamlPath);
-                        resDto.CalculatingPower = await ReadCalculatingPower();
+                        resDto.CalculatingPower = await ReadCalculatingPower(model.IpIndex);
                         break;
                     case (int)InformationTypeEnum.算力:
-                        resDto.CalculatingPower = await ReadCalculatingPower();
+                        resDto.CalculatingPower = await ReadCalculatingPower(model.IpIndex);
                         break;
                     case (int)InformationTypeEnum.温度:
                         resDto.CpuTemperature = await ReadCpuTemperature();
@@ -86,13 +86,13 @@ namespace 子端.Controller
                 switch (item)
                 {
                     case (int)InformationTypeEnum.运行bat:
-                        await WriteStartBat(model.YamlPath.FirstOrDefault());
+                        await WriteStartBat(model.YamlPath);
                         break;
                     case (int)InformationTypeEnum.启动:
-                        await WriteStartMiner(model.YamlPath);
+                        await WriteStartMiner(model);
                         break;
                     case (int)InformationTypeEnum.停止:
-                        await WriteEndMiner();
+                        await WriteEndMiner(model);
                         break;
                     case (int)InformationTypeEnum.设置配置文件:
                         await WriteYamlText(model.yaml);
@@ -111,18 +111,9 @@ namespace 子端.Controller
         /// <param name="list"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<object> GetOtherWhole(List<InPutInformation> input)
+        public async Task<object> GetOtherWhole(List<InPutInformationDto> list)
         {
-            var list = input.GroupBy(e => e.Ip).Select(e => new InPutInformationDto
-            {
-                Alias = e.First().Alias,
-                Ip = e.Key,
-                Remarks=e.First().Remarks,
-                UserId = e.First().UserId,
-                machineId=e.First().Id,
-                type=e.First().type,
-                YamlPath = e.OrderBy(cc => cc.Ip).Select(cc => cc.YamlPath).ToList(),
-            });
+            var resDto = new List<OutPutDto>();
             List<OutPutAllDto> resListData=new List<OutPutAllDto>();
             foreach (var item in list)
             {
@@ -148,7 +139,9 @@ namespace 子端.Controller
                     ResultData.Alias = item.Alias;
                     ResultData.Remarks = item.Remarks;
                     ResultData.UserId = item.UserId;
-                    ResultData.machineId = item.machineId;
+                    ResultData.IpIndex = item.IpIndex;
+                    ResultData.IpIndex = item.BeginCore;
+                    ResultData.IpIndex = item.EndCore;
                     ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
                     resListData.Add(ResultData);
                     MainFrom.mainfromInstance.SetText("成功");
@@ -161,42 +154,15 @@ namespace 子端.Controller
                     ResultData.Alias = item.Alias;
                     ResultData.Remarks = item.Remarks;
                     ResultData.UserId = item.UserId;
-                    ResultData.machineId = item.machineId;
+                    ResultData.IpIndex = item.IpIndex;
                     ResultData.CreateTime = DateTime.Now.ToString("HH:mm:ss");
                     resListData.Add(ResultData);
                 }
                
             }
 
-            var resDto = new List<OutPutDto>();
-            resListData?.ForEach(item => {
-                for (var i = 0; i < item.YamlPath.Count; i++)
-                {
-                    resDto.Add(new OutPutDto()
-                    {
-                        Alias = item.Alias,
-                        Ip = item.Ip,
-                        YamlPath = item.YamlPath[i],
-                        CpuLoad = item.CpuLoad,
-                        CpuPower = item.CpuPower,
-                        CpuFrequency = item.CpuFrequency,
-                        CpuTemperature = item.CpuTemperature,
-                        CreateTime = item.CreateTime,
-                        machineId = item.machineId,
-                        MemoryLoad = item.MemoryLoad,
-                        SsdLoad = item.SsdLoad,
-                        Remarks = item.Remarks,
-                        UserId = item.UserId,
-                        MemorySize = item.MemorySize,
-                        SsdTemperature = item.SsdTemperature,
-                        CalculatingPower = item.CalculatingPower[i],
-                        YamlText = item.YamlText[i],
-                    });
-                }
-            });
             
-
-            return await Task.FromResult(new { data = resDto, code = 200, msg = "成功" });
+            return await Task.FromResult(new { data = resListData, code = 200, msg = "成功" });
         }
 
         /// <summary>
@@ -205,18 +171,8 @@ namespace 子端.Controller
         /// <param name="list"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<object> SetOtherWhole(List<InPutInformation> input)
+        public async Task<object> SetOtherWhole(List<InPutInformationDto> list)
         {
-            var list = input.GroupBy(e => e.Ip).Select(e => new InPutInformationDto
-            {
-                Alias = e.First().Alias,
-                Ip = e.Key,
-                Remarks = e.First().Remarks,
-                UserId = e.First().UserId,
-                machineId = e.First().Id,
-                type = e.First().type,
-                YamlPath = e.OrderBy(cc => cc.Ip).Select(cc => cc.YamlPath).ToList(),
-            });
             List<string> resListData = new List<string>();
             foreach (var item in list)
             {
@@ -264,24 +220,19 @@ namespace 子端.Controller
 
 
         [HttpPost]
-        public async Task<object> CalculatingPower()
+        public async Task<object> CalculatingPower(int index)
         {
             //获取当前算力
-            var restext = await ReadCalculatingPower();
+            var restext = await ReadCalculatingPower(index);
             return await Task.FromResult(new { data= restext ,code=200,msg="成功" });
         }
 
 
-        private async Task<List<decimal>> ReadCalculatingPower()
+        private async Task<decimal> ReadCalculatingPower(int index)
         {
             MainFrom.mainfromInstance.SetText("获取当前算力");
             //获取当前算力
-            List<decimal> list = new List<decimal>();
-            list.Add(decimal.Parse(await appSettings.GetSettings("NowText1")));
-            list.Add(decimal.Parse(await appSettings.GetSettings("NowText2")));
-            list.Add(decimal.Parse(await appSettings.GetSettings("NowText3")));
-            list.Add(decimal.Parse(await appSettings.GetSettings("NowText4")));
-            return await Task.FromResult(list);
+            return await Task.FromResult(decimal.Parse(appSettings.GetSettings("NowText"+index)));
         }
 
         #endregion
@@ -291,22 +242,17 @@ namespace 子端.Controller
         [HttpGet]
         public async Task<object> GetYamlText(string path)
         {
-            var yaml = await ReadYamlText(new List<string>() { path });
+            var yaml = await ReadYamlText(path);
             return await Task.FromResult(new { data = yaml, code = 200, msg = "成功" });
         }
 
 
-        private async Task<List<InPutYamlTextDto>> ReadYamlText(List<string> path) {
+        private async Task<InPutYamlTextDto> ReadYamlText(string path) {
             //获取当前机器配置文件
             MainFrom.mainfromInstance.SetText("获取当前机器配置文件");
-            List<InPutYamlTextDto> reslist = new List<InPutYamlTextDto>();
-            foreach (var item in path)
-            {
-                var resData = await appSettings.ReadFile(item);
-                reslist.Add(resData);
-            }
-           
-            return reslist;
+            var resData = await appSettings.ReadFile(path);
+
+            return resData;
         }
 
         [HttpPost]
@@ -330,26 +276,43 @@ namespace 子端.Controller
         #region miner 启动 结束
 
         [HttpGet]
-        public async Task<object> WriteStartMiner(List<string> path)
+        public async Task<object> WriteStartMiner(InPutInformationDto model)
         {
-            //先停止
-            await WriteEndMiner();
-            Thread.Sleep(1000);
-
-
+            var IpIndex = model.IpIndex - 1;
             List<Process> p = MainFrom.mainfromInstance.GetProcess();
-            for (int i = 0; i < path.Count; i++)
-            {
-                p[i].StandardInput.WriteLine(path + "hpool-miner-ar-console.exe");
+
+            p[IpIndex].Close();
+            switch (IpIndex) {
+                case 0:
+                    MainFrom.mainfromInstance.p1Start();
+                    break;
+                case 1:
+                    MainFrom.mainfromInstance.p2Start();
+                    break;
+                case 2:
+                    MainFrom.mainfromInstance.p3Start();
+                    break;
+                case 3:
+                    MainFrom.mainfromInstance.p4Start();
+                    break;
             }
+            p = MainFrom.mainfromInstance.GetProcess();
+            if (model.EndCore != 0 && model.BeginCore != 0)
+            {
+                p[model.IpIndex].ProcessorAffinity = new IntPtr(2121);
+            }
+            p[IpIndex].StandardInput.WriteLine(model.YamlPath[0] + ":");
+            p[IpIndex].StandardInput.WriteLine("cd " + model.YamlPath);
+            p[IpIndex].StandardInput.WriteLine(@"hpool-miner-ar-console.exe");
 
 
             //运行miner
             return await Task.FromResult(new { code = 200, msg = "成功" }); ;
         }
 
+        //全部停止
         [HttpGet]
-        public async Task<object> WriteEndMiner()
+        public async Task<object> WriteEndMinerAll()
         {
             return await Task.Run(() => {
                 using (var process = CMDHelps.ExeCommand())
@@ -365,10 +328,38 @@ namespace 子端.Controller
             });
         }
 
+        //停止
+        public async Task<object> WriteEndMiner(InPutInformationDto model)
+        {
+            var IpIndex = model.IpIndex - 1;
+            List<Process> p = MainFrom.mainfromInstance.GetProcess();
+
+            p[IpIndex].Close();
+            switch (IpIndex)
+            {
+                case 0:
+                    MainFrom.mainfromInstance.p1Start();
+                    break;
+                case 1:
+                    MainFrom.mainfromInstance.p2Start();
+                    break;
+                case 2:
+                    MainFrom.mainfromInstance.p3Start();
+                    break;
+                case 3:
+                    MainFrom.mainfromInstance.p4Start();
+                    break;
+            }
+
+            return await Task.FromResult(new { code = 200, msg = "成功" });
+        }
+        
         private void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
             MainFrom.mainfromInstance.SetText(e.Data);
         }
+
+
 
         /// <summary>
         /// 运行bat

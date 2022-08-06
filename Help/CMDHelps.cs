@@ -25,17 +25,7 @@ namespace 子端
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.CreateNoWindow = true;
-
             return p;
-
-               
-                //p.StandardInput.WriteLine("exit");
-                //strOutput = p.StandardOutput.ReadToEnd();
-                //strOutput = Encoding.UTF8.GetString(Encoding.Default.GetBytes(strOutput));
-                //p.WaitForExit();
-                //p.Close();
-
-
         }
         ///
         /// 启动外部Windows应用程序，隐藏程序界面

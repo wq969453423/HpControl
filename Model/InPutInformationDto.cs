@@ -17,41 +17,20 @@ namespace 子端.Model
         public string Remarks { get; set; }
         public string CreateTime { get; set; }
 
-        /// <summary>
-        /// 是否多开
-        /// </summary>
-        public string IsOpenMore { get; set; }
+        public int BeginCore { get; set; }
 
-        public List<string> YamlPath { get; set; }
-
-
-        public List<int> type { get; set; }
-        public InPutYamlTextDto yaml { get; set; }
-    }
-
-
-    public class InPutInformation
-    {
-        public int Id { get;set; }
-        public int machineId { get; set; }
-        public int UserId { get; set; }
-        public string Ip { get; set; }
-
-        public string Alias { get; set; }
-        public string Remarks { get; set; }
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// 是否多开
-        /// </summary>
-        public string IsOpenMore { get; set; }
+        public int EndCore { get; set; }
 
         public string YamlPath { get; set; }
 
+        public int IpIndex { get; set; }
 
         public List<int> type { get; set; }
         public InPutYamlTextDto yaml { get; set; }
     }
+
+
+    
 
 
 }

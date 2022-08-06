@@ -15,39 +15,35 @@ namespace 子端.Help
         Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration("子端.exe");
         
         
-        public async Task<string> GetSettings(string key) {
+        public string GetSettings(string key) {
             //根据KEY读取值
             string Str = config.AppSettings.Settings[key].Value;
-            return await Task.FromResult(Str);
+            return Str;
         }
 
 
-        public async Task SetSettings(string key, string SetValue)
+        public void SetSettings(string key, string SetValue)
         {
             config.AppSettings.Settings[key].Value = SetValue;
-            await SaveSettings();
+            SaveSettings();
         }
 
-        public async Task AddSettings(string key,string SetValue)
+        public  void AddSettings(string key,string SetValue)
         {
             config.AppSettings.Settings.Add(key, SetValue);
-            await SaveSettings();
+             SaveSettings();
         }
 
-        public async Task DelSettings(string key)
+        public void DelSettings(string key)
         {
             config.AppSettings.Settings.Remove(key);
-            await SaveSettings();
+            SaveSettings();
         }
 
-        private async Task SaveSettings()
+        private void SaveSettings()
         {
-            await Task.Run(() =>
-            {
-                config.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection("AppSettings");
-            });
-            
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("AppSettings");
         }
 
 
@@ -114,10 +110,9 @@ namespace 子端.Help
                 .Replace("# 下面配置改为", "")
                 .Replace("# 绑定CPU开始序号", "")
                 .Replace("# E.g http://127.0.0.1:8888 socks5://127.0.0.1:8888", "")
-                .Replace("# socket5 or http proxy", "")
-                .Replace(" ", "");
+                .Replace("# socket5 or http proxy", "");
             }
-
+            input= input.Replace("  ", "");
 
 
             var pathIndex = input.IndexOf("path:");
@@ -136,7 +131,7 @@ namespace 子端.Help
             resModel.proxy = input.Substring(proxyIndex + 6, proxy2Index - (proxyIndex + 6)).Trim();
             resModel.flag = input.Substring(flagIndex + 5, threadNumIndex - (flagIndex + 5)).Trim();
             resModel.threadNum = input.Substring(threadNumIndex + 10, input.Length - (threadNumIndex + 10)).Trim();
-            await SetSettings("YamlPath", filePath);
+            SetSettings("YamlPath", filePath);
             return resModel;
 
         }

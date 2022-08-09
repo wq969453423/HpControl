@@ -330,14 +330,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="子端.exe" size="64016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="子端.exe" size="55824">
       <assemblyIdentity name="子端" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KWqTK4miI13JOPYmSUmhASLLtKdjMFOqvBqT/8jZrUY=</dsig:DigestValue>
+        <dsig:DigestValue>2uNQRtFfwkXEIeJ7t3avnLajcwHh9SjyG3qAnolbgaw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

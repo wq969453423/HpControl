@@ -25,7 +25,7 @@
           如果要利用文件和注册表虚拟化提供
           向后兼容性，请删除 requestedExecutionLevel 节点。
     -->
-		  <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>
@@ -337,7 +337,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2uNQRtFfwkXEIeJ7t3avnLajcwHh9SjyG3qAnolbgaw=</dsig:DigestValue>
+        <dsig:DigestValue>b8ol2izq30LF8dVpGeK6uym1DBlZtuQWmQiH6osGveg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

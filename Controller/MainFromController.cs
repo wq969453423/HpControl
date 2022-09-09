@@ -20,14 +20,8 @@ namespace 子端.Controller
 
     public class MainFromController : ApiController
     {
-        AppSettingsHelps appSettings;
+        AppSettingsHelps appSettings = new AppSettingsHelps();
         
-        
-        public MainFromController() {
-            appSettings = new AppSettingsHelps();
-            
-        }
-
 
         #region 其他机器操作
 
@@ -248,11 +242,21 @@ namespace 子端.Controller
 
 
         private async Task<InPutYamlTextDto> ReadYamlText(string path) {
-            //获取当前机器配置文件
-            MainFrom.mainfromInstance.SetText("获取当前机器配置文件");
-            var resData = await appSettings.ReadFile(path);
+            try
+            {
+                //获取当前机器配置文件
+                MainFrom.mainfromInstance.SetText("获取当前机器配置文件");
+                var resData = await appSettings.ReadFile(path);
+                return resData;
+            }
+            catch (Exception e)
+            {
+                MainFrom.mainfromInstance.SetText("获取配置文件出错");
+                return new InPutYamlTextDto(); ;
+            }
+            
 
-            return resData;
+            
         }
 
         [HttpPost]
@@ -275,6 +279,11 @@ namespace 子端.Controller
 
         #region miner 启动 结束
 
+        /// <summary>
+        /// 重新启动
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<object> WriteStartMiner(InPutInformationDto model)
         {
@@ -310,7 +319,10 @@ namespace 子端.Controller
             return await Task.FromResult(new { code = 200, msg = "成功" }); ;
         }
 
-        //全部停止
+        /// <summary>
+        /// 全部停止
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<object> WriteEndMinerAll()
         {
@@ -328,7 +340,11 @@ namespace 子端.Controller
             });
         }
 
-        //停止
+        /// <summary>
+        /// 停止
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public async Task<object> WriteEndMiner(InPutInformationDto model)
         {
             var IpIndex = model.IpIndex - 1;
@@ -374,10 +390,8 @@ namespace 子端.Controller
             plist[0].StandardInput.WriteLine(path);
             //运行miner
             return await Task.FromResult(new { code = 200, msg = "成功" }); ;
-
         }
 
-        
         #endregion
 
 

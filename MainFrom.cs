@@ -34,7 +34,10 @@ namespace 子端
             mainfromInstance = this;
         }
 
-        private async void kjzq() {
+        /// <summary>
+        /// 开机自启
+        /// </summary>
+        private void kjzq() {
             var SelfStarting = appSettings.GetSettings("SelfStarting");
             if (SelfStarting == "false") {
                 string execPath = Application.ExecutablePath;
@@ -46,7 +49,6 @@ namespace 子端
                 rk.Dispose();
             }
             //string.Format("[注册表操作]添加注册表键值：path = {0}, key = {1}, value = {2} 成功", rk2.Name, "TuniuAutoboot", execPath));
-
         }
 
         private async void StartApi() {
@@ -150,11 +152,6 @@ namespace 子端
                     setCapacity("NowText1", e.Data);
                     SetText("1算力：" + e.Data);
                 }
-                else
-                {
-                    SetText(e.Data);
-                }
-
             }
 
         }
